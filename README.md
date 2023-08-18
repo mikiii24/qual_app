@@ -29,7 +29,6 @@
 - belongs_to :user
 
 
-
 ## answers table
 
 | Column         | Type        | Option                          |
