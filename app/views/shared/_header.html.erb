@@ -1,0 +1,17 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='header-content'>
+    <div class='header-logo'>
+      <%= link_to "資格相談所", root_path, class:"logo-content" %>
+    </div>
+    <div class='nav'>
+      <%#検索欄の実装%>
+      <ul class='header-lists'>
+      <%##もしログインしている場合、ユーザー名とログアウトが表示されるようにする。%>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <%##もしログインしている場合、ユーザー名とログアウトが表示されるようにする。%>
+      </ul>
+    </div>
+  </div>
+</header>
