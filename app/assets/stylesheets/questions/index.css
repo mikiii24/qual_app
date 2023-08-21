@@ -1,0 +1,38 @@
+.contents{
+  display: flex;
+}
+
+.main-contents{
+  width: 80vw;
+  margin: 50px;
+  width: 100%;
+}
+
+.main-title{
+  font-size: 32px;
+}
+
+.question-lists{
+  width: 100%;
+}
+
+.question-list{
+  width: 90%;
+  height: 100px;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  margin: 40px;
+}
+
+.question-content{
+  margin: 20px 0 20px 20px ;
+}
+
+.question-title{
+  font-size: 20px;
+}
+
+.question-qual{
+  color: grey;
+  margin-left: 50px;
+}

@@ -1,2 +1,45 @@
 <%= render "shared/header" %>
+<div class='contents'>
+  <div class='nav-contents'>
+    <%= render "shared/nav" %>
+  </div>
+  <%# 質問一覧 %>
+  <div class='main-contents'>
+    <h2 class='main-title'>
+      質問一覧
+    </h2>
+    <ul class='question-lists'>
+      <%## もし質問がある場合は、質問を表示する。 %>
+      <%## /もし質問がある場合は、質問を表示する。 %>
+      <li class='question-list'>
+        <div class='question-content'>
+          <%= link_to "例：ITパスポートの習得に必要な勉強時間を教えてください。", "#", class: "question-title" %>
+        </div>
+        <div class='question-qual'>
+          ITパスポート
+        </div>
+      </li>
+      <li class='question-list'>
+        <div class='question-content'>
+          <%= link_to "例2：簿記において、定額法と定率法の違いを教えてください。", "#", class: "question-title" %>
+        </div>
+        <div class='question-qual'>
+          簿記三級
+        </div>
+      </li>
+      <li class='question-list'>
+        <div class='question-content'>
+          <%= link_to "例3：下の写真の酸素欠乏の問題について教えてください。", "#", class: "question-title" %>
+        </div>
+        <div class='question-qual'>
+          その他（技能・工業）
+        </div>
+      </li>
+    </ul>
+  </div>
+  <%# /質問一覧 %>
+</div>
+<div class="question-button">
+  <%= link_to "質問する", "#", class: "question-button-text" %>
+</div>
 <%= render "shared/footer" %>
