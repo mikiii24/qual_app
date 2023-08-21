@@ -6,10 +6,10 @@
 | ----------------------| ------- | ------------ |
 | nickname              | string  | null: false  |
 | name                  | string  | null: false  |
-| name-kana             | string  | null: false  |
+| name_kana             | string  | null: false  |
 | email                 | string  | null: false  |
 | password              | string  | null: false  |
-| password-confimation  | string  | null: false  |
+| password_confimation  | string  | null: false  |
 
 ### Association
 - has_many :answers
