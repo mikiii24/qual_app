@@ -7,6 +7,7 @@ class Question < ApplicationRecord
   with_options presence: true do
     validates :question_title
     validates :question_detail
-    validates :qual_id
   end
+
+  validates :qual_id, numericality: { other_than: 0, message: "can't be blank" }
 end
