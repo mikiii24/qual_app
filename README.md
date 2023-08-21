@@ -22,6 +22,7 @@
 | -----------------| ----------- | ------------------------------- |
 | question_title   | string      | null: false                     |
 | question_detail  | text        | null: false                     |
+| qual_id          | integer     | null: false                     |
 | user             | references  | null: false, foreign_key: true  |
 
 ### Association
