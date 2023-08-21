@@ -78,3 +78,7 @@ end
 gem 'pry-rails'
 
 gem 'devise'
+
+gem 'pry'
+
+gem 'active_hash'
