@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   def index
+    @questions = Question.includes(:user).order('created_at DESC')
+    @quals = Qual.all
   end
 
   def new
