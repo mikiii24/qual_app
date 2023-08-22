@@ -1,0 +1,89 @@
+.registration-main{
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  position: relative;
+
+}
+
+.form{
+  padding-top: 30px;
+}
+
+.form-title{
+  width: 70%;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 123, 255, 0.1), #007bff, rgba(0, 123, 255, 0.1));
+  margin: 0 auto;
+}
+
+.form-title-text{
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 
+        1px 1px 0 rgba(255, 255, 255, 0.7),
+        -1px -1px 0 rgba(255, 255, 255, 0.7),
+        1px -1px 0 rgba(255, 255, 255, 0.7),
+        -1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.form-main{
+  width: 60%;
+  margin-top: 30px;
+  position: absolute;
+  left: 35vw;
+
+}
+
+.form-contents{
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form-content{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-content::before{
+  content: "";
+  display: inline-block;
+  width: 5px; /* 縦線の幅 */
+  height: 24px;
+  background-color: #007bff; /* 希望の色 */
+  margin-right: 10px; /* 線とテキストの間隔 */
+}
+
+.form-text{
+  font-size: 18px;
+}
+
+.indispensable{
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.input-default{
+  width: 50%;
+  height: 32px;
+}
+
+.register-btn-content{
+  width: 50%;
+  text-align: center;
+
+}
+
+.register-btn{
+  width: 100px;
+  background: #007bff;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 100px;
+}

@@ -22,10 +22,10 @@
     </div>
     <div class="qual-select-contents">
       <div class="weight-bold-text">
-        どの資格に関する質問かを選択
+        どの資格に関する質問かを選択してください
       </div>
       <div class="qual-select-form">
-        <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " どの資格に関する質問か選択してください " }, { class: "select-box", id: "question-qual" }) %>
+        <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " 資格を選択 " }, { class: "select-box", id: "question-qual" }) %>
       </div>
     </div>
     <div class="question-btn-contents">
