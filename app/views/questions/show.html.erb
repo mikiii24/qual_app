@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+<div class='contents'>
+  <div class='nav-contents'>
+    <%= render "shared/nav" %>
+  </div>
+  <%# 質問詳細 %>
+  <div class='main-contents'>
+    <h2 class='main-title'>
+      質問詳細
+    </h2>
+    <ul class='question-lists'>
+      <li class='question-list'>
+        <div class='question-content'>
+          <div class='question-title'>
+            <%= @question.question_title %>
+          </div>
+          <div class='question-detail'>
+            <%= @question.question_detail%>
+          </div>
+          <div class='question-qual'>
+            <% qual = @quals.find { |status| status.id == @question.qual_id } %>
+                  <span><%= qual.name %></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <%# /質問詳細 %>
+</div>
+<%= render "shared/footer" %>

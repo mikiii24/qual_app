@@ -14,7 +14,7 @@
         <% @questions.each do |question| %>
           <li class='question-list'>
             <div class='question-content'>
-              <%= link_to question.question_title, "#", class: "question-title" %>
+              <%= link_to question.question_title, question_path(question.id), class: "question-title" %>
             </div>
             <div class='question-qual'>
               <% qual = @quals.find { |status| status.id == question.qual_id } %>
