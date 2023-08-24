@@ -27,6 +27,16 @@ class QuestionsController < ApplicationController
   def edit
     @question = Question.find(params[:id])
   end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to question_path(@question.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
   def question_params
     params.require(:question).permit(:question_title, :question_detail, :qual_id).merge(user_id: current_user.id)
