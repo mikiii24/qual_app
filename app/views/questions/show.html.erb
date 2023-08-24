@@ -28,7 +28,7 @@
       <%# /質問詳細 %>
       <div class='show-answer-contents'>
         <% if user_signed_in? %>
-          <div class='answer-upper-contents'>
+          <div class='show-upper-contents'>
             <% if current_user.id == @user.id %>
               <div class='show-btn-contents'>
                 <div class='show-btn-content'>
@@ -55,7 +55,16 @@
           <div class='show-bottom-contents'>
             <div>
               <h2 class='answer-index-title'>回答一覧</h2>
-              <%# 回答が表示される %>
+              <% @answers.each do |answer| %>
+                <div class="answer-index-contents">
+                  <div class="answer-nickname">
+                    <%= link_to answer.user.nickname, "#" %>
+                  </div>
+                  <div class="answer-text">
+                    <%= answer.answer_text %>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
           <%# /回答一覧 %>

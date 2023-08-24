@@ -16,6 +16,7 @@
 .main-title{
   width: 100%;
   font-size: 32px;
+  letter-spacing: 2px;
 }
 
 .question-lists{
@@ -34,6 +35,7 @@
 }
 
 .question-title{
+  letter-spacing: 2px;
   font-size: 20px;
 }
 

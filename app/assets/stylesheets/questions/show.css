@@ -92,6 +92,20 @@
   font-size: 18px;
 }
 
+.answer-index-contents{
+  margin: 10px 0 30px 20px;
+}
+
+.answer-nickname{
+  font-size: 16px;
+}
+
+.answer-text{
+  margin-top: 15px;
+  margin-left: 20px;
+  letter-spacing: 1px;
+}
+
 .login-alert{
   margin-top: 50px;
 }

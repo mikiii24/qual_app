@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
     @quals = Qual.all
     @user = @question.user
     @answer = Answer.new
+    @answers = @question.answers.includes(:user)
   end
 
   def edit

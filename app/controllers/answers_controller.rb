@@ -1,6 +1,11 @@
 class AnswersController < ApplicationController
   def create
-    Answer.create(answer_params)
+    @answer = Answer.new(answer_params)
+    if @answer.save
+      redirect_to "/questions/#{@answer.question.id}"
+    else
+      render "questions/show"
+    end
   end
 
   private
