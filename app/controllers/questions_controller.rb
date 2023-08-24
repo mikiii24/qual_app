@@ -21,6 +21,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @quals = Qual.all
+    @user = @question.user
   end
 
   private
