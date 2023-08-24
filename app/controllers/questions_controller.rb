@@ -37,6 +37,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    question = Question.find(params[:id])
+    if question.user == current_user
+      question.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   def question_params
     params.require(:question).permit(:question_title, :question_detail, :qual_id).merge(user_id: current_user.id)
