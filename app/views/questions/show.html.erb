@@ -35,7 +35,7 @@
                   <%= link_to "質問の編集", edit_question_path(@question.id), method: :get, class: "show-button-text" %>
                 </div>
                 <div class='show-btn-content'>
-                  <%= link_to "質問の削除", "#", data: { turbo_method: :delete }, class:"show-button-text" %>
+                  <%= link_to "質問の削除", question_path(@question.id), data: { turbo_method: :delete }, class:"show-button-text" %>
                 </div>
               </div>
             <% else %>
