@@ -27,25 +27,33 @@
       </ul>
     </div>
     <%# /質問詳細 %>
-    <div class="answer-form-contents">
-      <button id="answer-button">回答する</button>
-      <div id="answer-form" class="answer-form">
-        <h2>回答フォーム</h2>
-        <form>
-          <input type="text" placeholder="回答を入力してください">
-          <button type="submit">回答する</button>
-        </form>
+    
+    <div class="answer-post-contents">
+    <script src="script.js"></script>
+      <div class='answer-btn-contents'>
+        <button id="answer-btn">回答する</button>
+      </div>
+      <div id="answer-form-contents" class="answer-form-contents">
+        <div class='answer-form-title'>
+          <h2>回答フォーム</h2>
+        </div>
+        <div class='answer-form-text'>
+          <form class=''>
+            <input type="text" placeholder="回答を入力してください">
+            <button type="submit", class="answer-post-btn">回答を送信する</button>
+          </form>
+        </div>
       </div>
     </div>
-    <!-- 他の回答 -->
+    <%# 回答一覧 %>
     <div class='show-answer-contents'>
       <div>
-        <h2>他の回答</h2>
+        <h2>回答一覧</h2>
         <p>回答内容がここに表示されます。</p>
       </div>
     </div>
+    <%# /回答一覧 %>
   </div>
 </div>
-
 
 <%= render "shared/footer" %>

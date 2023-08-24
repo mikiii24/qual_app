@@ -3,9 +3,8 @@
 }
 
 .main-contents{
-  width: 80vw;
+  width: 100vw;
   margin: 50px;
-  width: 100%;
 }
 
 .main-title{
@@ -35,4 +34,18 @@
 .question-qual{
   color: grey;
   margin-left: 50px;
+}
+
+.question-button {
+  background-color: green;
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.question-button-text{
+  color: white;
+  text-decoration: none;
 }
