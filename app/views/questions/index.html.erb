@@ -54,8 +54,7 @@
     </div>
   </div>
   <%# /質問一覧 %>
+  <%= link_to "質問する", new_question_path, class: "question-button" %>
 </div>
-<div class="question-button">
-  <%= link_to "質問する", new_question_path, class: "question-button-text" %>
-</div>
+
 <%= render "shared/footer" %>

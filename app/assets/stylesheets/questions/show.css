@@ -21,6 +21,10 @@
 
 .show-btn-content{
   margin-left: 30px;
+
+}
+
+.show-button-text{
   width: 120px;
   background-color: green;
   padding: 15px;
@@ -28,10 +32,6 @@
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-}
-
-.show-button-text{
-  color: white;
   text-decoration: none;
 }
 
@@ -45,6 +45,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+
 
 #answer-btn{
   margin-left: 20px;

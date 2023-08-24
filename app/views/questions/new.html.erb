@@ -27,9 +27,7 @@
             <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " 資格を選択 " }, { class: "select-box", id: "question-qual" }) %>
           </div>
         </div>
-        <div class="question-btn-contents">
-          <%= f.submit "投稿する", class:"question-btn" %>
-        </div>
+        <%= f.submit "投稿する", class:"question-btn" %>
         <% end %>
       </div>
     </div>
