@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
-<div class='show-contents'>
+<div class='contents'>
   <div class='nav-contents'>
     <%= render "shared/nav" %>
   </div>
   <div class='main-contents'>
     <%# 質問詳細 %>
-    <div class='show-question-contents'>
+    <div class='main-content'>
       <h2 class='main-title'>
         質問詳細
       </h2>
@@ -25,42 +25,45 @@
           </div>
         </li>
       </ul>
-    </div>
-    <%# /質問詳細 %>
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id %>
-        <div class='show-btn-contents'>
-          <%= link_to "質問の編集", "#", method: :get, class: "question-edit-btn" %>
-          <%= link_to "質問の削除", "#", data: { turbo_method: :delete }, class:"question-destroy" %>
-        </div>
-      <% else %>
-        <div class="answer-post-contents">
-        <script src="script.js"></script>
-          <div class='answer-btn-contents'>
-            <button id="answer-btn">回答する</button>
-          </div>
-          <div id="answer-form-contents" class="answer-form-contents">
-            <div class='answer-form-title'>
-              <h2>回答フォーム</h2>
-            </div>
-            <div class='answer-form-text'>
-              <form class=''>
-                <input type="text" placeholder="回答を入力してください">
-                <button type="submit", class="answer-post-btn">回答を送信する</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <%# 回答一覧 %>
+      <%# /質問詳細 %>
       <div class='show-answer-contents'>
-        <div>
-          <h2>回答一覧</h2>
-          <p>回答内容がここに表示されます。</p>
-        </div>
+        <% if user_signed_in? %>
+          <div class='answer-upper-contents'>
+            <% if current_user.id == @user.id %>
+              <div class='show-btn-contents'>
+                <div class='show-btn-content'>
+                  <%= link_to "質問の編集", "#", method: :get, class: "question-button-text" %>
+                </div>
+                <div class='show-btn-content'>
+                  <%= link_to "質問の削除", "#", data: { turbo_method: :delete }, class:"question-button-text" %>
+                </div>
+              </div>
+            <% else %>
+              <div class="answer-post-contents">
+              <script src="script.js"></script>
+                <div class='show-btn-content'>
+                  <button id="answer-btn">回答する</button>
+                </div>
+                <div id="answer-form-contents" class="answer-form-contents">
+                  <form class="answer-form">
+                    <textarea id="answer-area" name="answer-area" rows="4" required></textarea>
+                    <button type="submit", class="answer-post-btn">回答を送信する</button>
+                  </form>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <%# 回答一覧 %>
+          <div class='show-bottom-contents'>
+            <div>
+              <h2 class='answer-index-title'>回答一覧</h2>
+              <%# 回答が表示される %>
+            </div>
+          </div>
+          <%# /回答一覧 %>
+        <% end %>
       </div>
-      <%# /回答一覧 %>
-    <% end %>
+    </div>
   </div>
 </div>
 

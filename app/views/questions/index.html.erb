@@ -5,51 +5,53 @@
   </div>
   <%# 質問一覧 %>
   <div class='main-contents'>
-    <h2 class='main-title'>
-      質問一覧
-    </h2>
-    <ul class='question-lists'>
-      <%## もし質問がある場合は、質問を表示する。 %>
-      <% if @questions.present? %>
-        <% @questions.each do |question| %>
+    <div class='main-content'>
+      <h2 class='main-title'>
+        質問一覧
+      </h2>
+      <ul class='question-lists'>
+        <%## もし質問がある場合は、質問を表示する。 %>
+        <% if @questions.present? %>
+          <% @questions.each do |question| %>
+            <li class='question-list'>
+              <div class='question-content'>
+                <%= link_to question.question_title, question_path(question.id), class: "question-title", data: { turbo: false } %>
+              </div>
+              <div class='question-qual'>
+                <% qual = @quals.find { |status| status.id == question.qual_id } %>
+                      <span><%= qual.name %></span>
+              </div>
+            </li>
+          <% end %>
+        <%## /もし質問がある場合は、質問を表示する。 %>
+        <% else %>
           <li class='question-list'>
             <div class='question-content'>
-              <%= link_to question.question_title, question_path(question.id), class: "question-title", data: { turbo: false } %>
+              <%= link_to "例：ITパスポートの習得に必要な勉強時間を教えてください。", "#", class: "question-title" %>
             </div>
             <div class='question-qual'>
-              <% qual = @quals.find { |status| status.id == question.qual_id } %>
-                    <span><%= qual.name %></span>
+              ITパスポート
+            </div>
+          </li>
+          <li class='question-list'>
+            <div class='question-content'>
+              <%= link_to "例2：簿記において、定額法と定率法の違いを教えてください。", "#", class: "question-title" %>
+            </div>
+            <div class='question-qual'>
+              簿記三級
+            </div>
+          </li>
+          <li class='question-list'>
+            <div class='question-content'>
+              <%= link_to "例3：下の写真の酸素欠乏の問題について教えてください。", "#", class: "question-title" %>
+            </div>
+            <div class='question-qual'>
+              その他（技能・工業）
             </div>
           </li>
         <% end %>
-      <%## /もし質問がある場合は、質問を表示する。 %>
-      <% else %>
-        <li class='question-list'>
-          <div class='question-content'>
-            <%= link_to "例：ITパスポートの習得に必要な勉強時間を教えてください。", "#", class: "question-title" %>
-          </div>
-          <div class='question-qual'>
-            ITパスポート
-          </div>
-        </li>
-        <li class='question-list'>
-          <div class='question-content'>
-            <%= link_to "例2：簿記において、定額法と定率法の違いを教えてください。", "#", class: "question-title" %>
-          </div>
-          <div class='question-qual'>
-            簿記三級
-          </div>
-        </li>
-        <li class='question-list'>
-          <div class='question-content'>
-            <%= link_to "例3：下の写真の酸素欠乏の問題について教えてください。", "#", class: "question-title" %>
-          </div>
-          <div class='question-qual'>
-            その他（技能・工業）
-          </div>
-        </li>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
   <%# /質問一覧 %>
 </div>
