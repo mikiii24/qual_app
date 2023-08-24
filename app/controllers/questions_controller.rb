@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @quals = Qual.all
     @user = @question.user
+    @answer = Answer.new
   end
 
   def edit

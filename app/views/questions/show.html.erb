@@ -43,10 +43,10 @@
               <script src="script.js"></script>
                 <button id="answer-btn">回答する</button>
                 <div id="answer-form-contents" class="answer-form-contents">
-                  <form class="answer-form">
-                    <textarea id="answer-area" name="answer-area" rows="4" required></textarea>
-                    <button type="submit", class="answer-post-btn">回答を送信する</button>
-                  </form>
+                  <%= form_with(model: [@question, @answer], local: true) do |f| %>
+                    <%= f.text_area :answer_text, id: "answer-text-form", placeholder: "回答を入力する", rows: "4" %>
+                    <%= f.submit "投稿する", class: "answer-post-btn" %>
+                  <% end %>
                 </div>
               </div>
             <% end %>
