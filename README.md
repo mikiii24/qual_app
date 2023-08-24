@@ -34,7 +34,7 @@
 
 | Column         | Type        | Option                          |
 | -------------- | ----------- | ------------------------------- |
-| answer_detail  | string      | null: false                     |
+| answer_text    | string      | null: false                     |
 | question       | references  | null: false, foreign_key: true  |
 | user           | references  | null: false, foreign_key: true  |
 
