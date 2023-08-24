@@ -1,30 +1,51 @@
 <%= render "shared/header" %>
-<div class='contents'>
+<div class='show-contents'>
   <div class='nav-contents'>
     <%= render "shared/nav" %>
   </div>
-  <%# 質問詳細 %>
   <div class='main-contents'>
-    <h2 class='main-title'>
-      質問詳細
-    </h2>
-    <ul class='question-lists'>
-      <li class='question-list'>
-        <div class='question-content'>
-          <div class='question-title'>
-            <%= @question.question_title %>
+    <%# 質問詳細 %>
+    <div class='show-question-contents'>
+      <h2 class='main-title'>
+        質問詳細
+      </h2>
+      <ul class='question-lists'>
+        <li class='question-list'>
+          <div class='question-content'>
+            <div class='question-title'>
+              <%= @question.question_title %>
+            </div>
+            <div class='question-detail'>
+              <%= @question.question_detail%>
+            </div>
+            <div class='question-qual'>
+              <% qual = @quals.find { |status| status.id == @question.qual_id } %>
+                    <span><%= qual.name %></span>
+            </div>
           </div>
-          <div class='question-detail'>
-            <%= @question.question_detail%>
-          </div>
-          <div class='question-qual'>
-            <% qual = @quals.find { |status| status.id == @question.qual_id } %>
-                  <span><%= qual.name %></span>
-          </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+    <%# /質問詳細 %>
+    <div class="answer-form-contents">
+      <button id="answer-button">回答する</button>
+      <div id="answer-form" class="answer-form">
+        <h2>回答フォーム</h2>
+        <form>
+          <input type="text" placeholder="回答を入力してください">
+          <button type="submit">回答する</button>
+        </form>
+      </div>
+    </div>
+    <!-- 他の回答 -->
+    <div class='show-answer-contents'>
+      <div>
+        <h2>他の回答</h2>
+        <p>回答内容がここに表示されます。</p>
+      </div>
+    </div>
   </div>
-  <%# /質問詳細 %>
 </div>
+
+
 <%= render "shared/footer" %>
