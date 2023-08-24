@@ -24,6 +24,9 @@ class QuestionsController < ApplicationController
     @user = @question.user
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
   private
   def question_params
     params.require(:question).permit(:question_title, :question_detail, :qual_id).merge(user_id: current_user.id)
