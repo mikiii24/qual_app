@@ -1,37 +1,37 @@
 <%= render "shared/header" %>
 <script src="qual.js"></script>
   <div class='question-post-contents'>
-    <h2 class="question-post-text">
-      質問を記入してください
-    </h2>
-    <%= form_with model: @question, data: {turbo: false} do |f| %>
-    <div class="question-title-contents">
-      <div class="weight-bold-text">
-        タイトル
-      </div>
-      <div class="question-title-form">
-        <%= f.text_field :question_title %>
+    <div class='question-post-content'>
+      <h2 class="question-post-text">
+        質問を記入してください
+      </h2>
+      <div class="question-form-content">
+        <%= form_with model: @question, data: {turbo: false} do |f| %>
+        <div class="form-contents">
+          <div class='form-content'>
+            <label class="form-text">タイトル</label>
+          </div>
+          <%= f.text_field :question_title, class:"question-title-form" %>
+        </div>
+        <div class="form-contents">
+          <div class='form-content'>
+            <label class="form-text">質問内容</label>
+          </div>
+            <%= f.text_area :question_detail, class:"question-detail-form" %>
+        </div>
+        <div class="form-contents">
+          <div class='form-content'>
+            <label class="form-text">どの資格に関する質問かを選択してください</label>
+          </div>
+          <div class="qual-select-form">
+            <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " 資格を選択 " }, { class: "select-box", id: "question-qual" }) %>
+          </div>
+        </div>
+        <div class="question-btn-contents">
+          <%= f.submit "投稿する", class:"question-btn" %>
+        </div>
+        <% end %>
       </div>
     </div>
-    <div class="question-detail-contents">
-      <div class="weight-bold-text">
-        質問内容
-      </div>
-      <div class="question-detail-form">
-        <%= f.text_area :question_detail %>
-      </div>
-    </div>
-    <div class="qual-select-contents">
-      <div class="weight-bold-text">
-        どの資格に関する質問かを選択してください
-      </div>
-      <div class="qual-select-form">
-        <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " 資格を選択 " }, { class: "select-box", id: "question-qual" }) %>
-      </div>
-    </div>
-    <div class="question-btn-contents">
-      <%= f.submit "投稿する", class:"question-btn" %>
-    </div>
-    <% end %>
   </div>
 <%= render "shared/footer" %>

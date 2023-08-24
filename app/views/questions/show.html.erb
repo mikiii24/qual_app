@@ -32,18 +32,16 @@
             <% if current_user.id == @user.id %>
               <div class='show-btn-contents'>
                 <div class='show-btn-content'>
-                  <%= link_to "質問の編集", "#", method: :get, class: "question-button-text" %>
+                  <%= link_to "質問の編集", "#", method: :get, class: "show-button-text" %>
                 </div>
                 <div class='show-btn-content'>
-                  <%= link_to "質問の削除", "#", data: { turbo_method: :delete }, class:"question-button-text" %>
+                  <%= link_to "質問の削除", "#", data: { turbo_method: :delete }, class:"show-button-text" %>
                 </div>
               </div>
             <% else %>
               <div class="answer-post-contents">
               <script src="script.js"></script>
-                <div class='show-btn-content'>
-                  <button id="answer-btn">回答する</button>
-                </div>
+                <button id="answer-btn">回答する</button>
                 <div id="answer-form-contents" class="answer-form-contents">
                   <form class="answer-form">
                     <textarea id="answer-area" name="answer-area" rows="4" required></textarea>

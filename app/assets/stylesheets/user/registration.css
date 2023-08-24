@@ -3,7 +3,6 @@
   min-width: 800px;
   height: 100%;
   position: relative;
-
 }
 
 .form{
@@ -35,7 +34,6 @@
   margin-top: 30px;
   position: absolute;
   left: 35vw;
-
 }
 
 .form-contents{
@@ -52,10 +50,10 @@
 .form-content::before{
   content: "";
   display: inline-block;
-  width: 5px; /* 縦線の幅 */
+  width: 5px;
   height: 24px;
-  background-color: #007bff; /* 希望の色 */
-  margin-right: 10px; /* 線とテキストの間隔 */
+  background-color: #007bff;
+  margin-right: 10px;
 }
 
 .form-text{
@@ -70,6 +68,9 @@
 .input-default{
   width: 50%;
   height: 32px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .register-btn-content{
@@ -79,11 +80,12 @@
 }
 
 .register-btn{
-  width: 100px;
-  background: #007bff;
-  color: #fff;
-  line-height: 48px;
-  font-size: 14px;
+  width: 120px;
+  padding: 10px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   margin-bottom: 100px;
 }

@@ -16,8 +16,34 @@
 
 .show-btn-contents{
   display: flex;
-  margin-bottom: 30px;
-  margin-left: 20px;
+  margin: 30px 0px 80px 0px;
+}
+
+.show-btn-content{
+  margin-left: 30px;
+  width: 120px;
+  background-color: green;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-button-text{
+  color: white;
+  text-decoration: none;
+}
+
+.answer-btn-content{
+  margin-left: 30px;
+  width: 120px;
+  background-color: green;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #answer-btn{
