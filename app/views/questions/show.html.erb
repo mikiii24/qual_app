@@ -59,6 +59,10 @@
             </div>
           </div>
           <%# /回答一覧 %>
+        <% else %>
+          <div class="login-alert">
+            <%= link_to 'ログイン', user_session_path, class: "login-alert-btn" %>して回答を見る
+          </div>
         <% end %>
       </div>
     </div>
