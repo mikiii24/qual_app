@@ -1,20 +1,8 @@
-<%# サイドバー %>
 <div class='nav-content'>
 <script src="qual_list.js"></script>
   <h3 class='nav-title'>
     ジャンルから探す
   </h3>
-  <ul class='nav-lists'>
-    <li class='nav-list'>IT・パソコン</li>
-    <li class='nav-list'>食・料理</li>
-    <li class='nav-list'>金融・法律</li>
-    <li class='nav-list'>美容・ファッション</li>
-    <li class='nav-list'>サービス・冠婚葬祭</li>
-    <li class='nav-list'>生物・環境</li>
-    <li class='nav-list'>公務員・教育</li>
-    <li class='nav-list'>乗り物</li>
-    <li class='nav-list'>技能・工業</li>
-  </ul>
   <div class='lists-contents'>
     <ul class='nav-lists'>
       <li class='nav-list' onclick="toggleDropdown('it');">IT・パソコン</li>
@@ -65,4 +53,21 @@
     </ul>
   </div>
 </div>
-<%# /サイドバー %>
+
+<script>
+function toggleDropdown(genre) {
+  var dropdowns = document.querySelectorAll('.dropdown-list');
+  
+  for (var i = 0; i < dropdowns.length; i++) {
+    if (dropdowns[i].id === genre) {
+      if (dropdowns[i].style.display === 'none') {
+        dropdowns[i].style.display = 'block';
+      } else {
+        dropdowns[i].style.display = 'none';
+      }
+    } else {
+      dropdowns[i].style.display = 'none';
+    }
+  }
+}
+</script>
