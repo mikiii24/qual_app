@@ -45,6 +45,19 @@ https://docs.google.com/spreadsheets/d/13p_S5GR82aKlj5Rks0WhmEvNxC3jRqN_8pE71TgD
 
 # 実装した機能についての画像やGIFおよびその説明
 
+下の画像がトップページとなっております。
+
+[![Image from Gyazo](https://i.gyazo.com/c9271580122047ea2881fe144a9e26a2.png)](https://gyazo.com/c9271580122047ea2881fe144a9e26a2)
+
+- ヘッダー右から新規登録とログインができます。
+- 質問一覧の右側から質問を投稿できます。
+- 「ジャンルから探す」の下の項目をクリックすると、ジャンルに対応した資格（現在は仮置きです）が表示されます。
+[![Image from Gyazo](https://i.gyazo.com/3729a4bb680852ad067d8c026adb265b.png)](https://gyazo.com/3729a4bb680852ad067d8c026adb265b)
+
+- 実際に質問すると、ダミーが消えて、質問内容が表示されます。
+- 質問詳細ページに進んだとき、質問したユーザーの場合は編集と削除、質問したユーザー以外の場合は回答ボタンが表示されます。
+[![Image from Gyazo](https://i.gyazo.com/a57bd7e3d1747976f07547a546d6d02c.png)](https://gyazo.com/a57bd7e3d1747976f07547a546d6d02c)
+[![Image from Gyazo](https://i.gyazo.com/5f15a514e6d6343640e1c5ebec6af343.png)](https://gyazo.com/5f15a514e6d6343640e1c5ebec6af343)
 
 # 実装予定の機能
 
@@ -96,3 +109,32 @@ https://docs.google.com/spreadsheets/d/13p_S5GR82aKlj5Rks0WhmEvNxC3jRqN_8pE71TgD
 ### Association
 - belongs_to :questions
 - belongs_to :user
+
+# 画面遷移図
+
+# 開発環境
+- フロントエンド :HTML, CSS, javascript
+- バックエンド :Ruby on Rails
+- インフラ :render
+- テキストエディタ :Visual Studio Code
+
+# ローカルでの動作方法
+
+git clone https://github.com/we-b/qual_app.git
+
+# 工夫したポイント
+
+javascriptを使用した資格の選択や回答用フォームの出現に苦労しました。
+
+特に、ユーザーが誤ってそれぞれのジャンルを選択しないために、資格のプルダウンメニューの中の各ジャンルを非活性化するようにいたしました。
+
+# 改善点
+質問一覧から特定の資格に関する質問のみを絞り込めるように、サイドバーを改善します。
+
+画面の大きさを変更した際に、文字被りなどが生じてしまうため、CSSを変更します。
+
+解決済みの場合、解決済みのボタンと、その印を表示させたいと考えています。
+
+# 制作時間
+
+約80時間

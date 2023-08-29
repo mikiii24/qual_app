@@ -1,6 +1,7 @@
+// 回答用フォームの出現
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("answer-form-contents");
-  form.style.display = "none"; // フォームを最初は非表示にする
+  form.style.display = "none";
 
   const toggleButton = document.getElementById("answer-btn");
   toggleButton.addEventListener("click", toggleForm);
