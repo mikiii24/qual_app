@@ -1,0 +1,21 @@
+<div id="selectedItemText"></div>
+
+<script>
+function getURLParameter(name) {
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+function displaySelectedItemText() {
+  var selectedItemText = getURLParameter('text');
+  document.getElementById('selectedItemText').textContent = selectedItemText;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  displaySelectedItemText();
+});
+
+window.addEventListener("turbo:load", function() {
+  displaySelectedItemText();
+});
+</script>
