@@ -1,4 +1,17 @@
 <div id="selectedItemText"></div>
+<% if @questions.present? %>
+  <% @questions.each do |question| %>
+    <li class='question-list'>
+      <div class='question-content'>
+        <%= link_to question.question_title, question_path(question.id), class: "question-title", data: { turbo: false } %>
+      </div>
+      <div class='question-qual'>
+        <% qual = @quals.find { |status| status.id == question.qual_id } %>
+              <span><%= qual.name %></span>
+      </div>
+    </li>
+  <% end %>
+<% end %>
 
 <script>
 function getURLParameter(name) {

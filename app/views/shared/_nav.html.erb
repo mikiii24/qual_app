@@ -83,4 +83,10 @@ function showText(text) {
   var selectedItemText = document.getElementById('selectedItemText');
   selectedItemText.textContent = text;
 }
+
+function sendQual(qualName) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/search_genre?qual_name=' + qualName, true);
+  xhr.send();
+}
 </script>

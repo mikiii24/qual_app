@@ -49,6 +49,15 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def search_genre
+    @quals = Qual.all
+    genre = params[:text]
+    matching_qual = Qual.find_by(name: genre)
+    if matching_qual
+      @questions = Question.where(qual_id: matching_qual.id)
+    end
+  end
+
   private
   def question_params
     params.require(:question).permit(:question_title, :question_detail, :qual_id).merge(user_id: current_user.id)
