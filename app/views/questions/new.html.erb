@@ -27,6 +27,17 @@
             <%= f.collection_select(:qual_id, Qual.all, :id, :name, { prompt: " 資格を選択 " }, { class: "select-box", id: "question-qual" }) %>
           </div>
         </div>
+        <div class="img-post">
+          <div class='form-content'>
+            <label class="form-text">質問画像</label>
+          </div>
+          <div class="img-btn">
+            <p>
+              画像を挿入
+            </p>
+            <%= f.file_field :image, id:"question-image" %>
+          </div>
+        </div>
         <%= f.submit "投稿する", class:"question-btn" %>
         <% end %>
       </div>
