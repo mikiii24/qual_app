@@ -1,14 +1,13 @@
 <%= render "shared/header" %>
-<div class='contents'>
-  <div class='main-contents'>
-    <%# 質問詳細 %>
-    <div class='main-content'>
-      <h2 class='main-title'>
-        質問詳細
-      </h2>
-      <ul class='question-lists'>
-        <li class='question-list'>
-          <div class='question-content'>
+
+<div class='show-contents'>
+  <%# 質問詳細 %>
+  <div class='show-content'>
+    <h2 class='show-title'>
+      質問詳細
+    </h2>
+    <div class='show-question-contents'>
+          <div class='show-question-content'>
             <div class='question-title'>
               <%= @question.question_title %>
             </div>
@@ -17,60 +16,61 @@
             </div>
             <div class='question-qual'>
               <% qual = @quals.find { |status| status.id == @question.qual_id } %>
-                    <span><%= qual.name %></span>
+              <span><%= qual.name %></span>
+            </div>
+            <div class='question-image'>
+              <%= image_tag @question.image.variant(resize: '500x500'), class: 'question-img' if @question.image.attached? %>
             </div>
           </div>
-        </li>
-      </ul>
-      <%# /質問詳細 %>
-      <div class='show-answer-contents'>
-        <% if user_signed_in? %>
-          <div class='show-upper-contents'>
-            <% if current_user.id == @user.id %>
-              <div class='show-btn-contents'>
-                <div class='show-btn-content'>
-                  <%= link_to "質問の編集", edit_question_path(@question.id), method: :get, class: "show-button-text" %>
-                </div>
-                <div class='show-btn-content'>
-                  <%= link_to "質問の削除", question_path(@question.id), data: { turbo_method: :delete }, class:"show-button-text" %>
-                </div>
+    </div>
+    <%# /質問詳細 %>
+    <div class='show-answer-contents'>
+      <% if user_signed_in? %>
+        <div class='show-upper-contents'>
+          <% if current_user.id == @user.id %>
+            <div class='show-btn-contents'>
+              <div class='show-btn-content'>
+                <%= link_to "質問の編集", edit_question_path(@question.id), method: :get, class: "show-button-text" %>
               </div>
-            <% else %>
-              <div class="answer-post-contents">
-              <script src="script.js"></script>
-                <button id="answer-btn">回答する</button>
-                <div id="answer-form-contents" class="answer-form-contents">
-                  <%= form_with(model: [@question, @answer], local: true) do |f| %>
-                    <%= f.text_area :answer_text, id: "answer-text-form", placeholder: "回答を入力する", rows: "4" %>
-                    <%= f.submit "投稿する", class: "answer-post-btn" %>
-                  <% end %>
+              <div class='show-btn-content'>
+                <%= link_to "質問の削除", question_path(@question.id), data: { turbo_method: :delete }, class:"show-button-text" %>
+              </div>
+            </div>
+          <% else %>
+            <div class="answer-post-contents">
+            <script src="script.js"></script>
+              <button id="answer-btn">回答する</button>
+              <div id="answer-form-contents" class="answer-form-contents">
+                <%= form_with(model: [@question, @answer], local: true) do |f| %>
+                  <%= f.text_area :answer_text, id: "answer-text-form", placeholder: "回答を入力する", rows: "4" %>
+                  <%= f.submit "投稿する", class: "answer-post-btn" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%# 回答一覧 %>
+        <div class='show-bottom-contents'>
+          <div>
+            <h2 class='answer-index-title'>回答一覧</h2>
+            <% @answers.each do |answer| %>
+              <div class="answer-index-contents">
+                <div class="answer-nickname">
+                  <%= link_to answer.user.nickname, "#" %>
+                </div>
+                <div class="answer-text">
+                  <%= answer.answer_text %>
                 </div>
               </div>
             <% end %>
           </div>
-          <%# 回答一覧 %>
-          <div class='show-bottom-contents'>
-            <div>
-              <h2 class='answer-index-title'>回答一覧</h2>
-              <% @answers.each do |answer| %>
-                <div class="answer-index-contents">
-                  <div class="answer-nickname">
-                    <%= link_to answer.user.nickname, "#" %>
-                  </div>
-                  <div class="answer-text">
-                    <%= answer.answer_text %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-          <%# /回答一覧 %>
-        <% else %>
-          <div class="login-alert">
-            <%= link_to 'ログイン', user_session_path, class: "login-alert-btn" %>して回答を見る
-          </div>
-        <% end %>
-      </div>
+        </div>
+        <%# /回答一覧 %>
+      <% else %>
+        <div class="login-alert">
+          <%= link_to 'ログイン', user_session_path, class: "login-alert-btn" %>して回答を見る
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
