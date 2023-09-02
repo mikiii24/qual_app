@@ -12,7 +12,7 @@
 
 .show-title{
   width: 100%;
-  font-size: 32px;
+  font-size: 36px;
   letter-spacing: 2px;
 }
 
@@ -22,7 +22,7 @@
 
 .show-question-content{
   border-top: 1px solid #ddd;
-  padding: 10px;
+  padding: 30px 0 10px 10px;
   margin: 40px 0;
 }
 

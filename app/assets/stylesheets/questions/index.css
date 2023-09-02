@@ -37,6 +37,7 @@
 .question-title{
   letter-spacing: 2px;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .question-qual{
