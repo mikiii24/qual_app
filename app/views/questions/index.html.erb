@@ -10,12 +10,14 @@
         質問一覧
       </h2>
       <ul class='question-lists'>
-        <%## もし質問がある場合は、質問を表示する。 %>
         <% if @questions.present? %>
           <% @questions.each do |question| %>
             <li class='question-list'>
               <div class='question-content'>
                 <%= link_to question.question_title, question_path(question.id), class: "question-title", data: { turbo: false } %>
+                <%# 解決済みの場合のみ表示される %>
+                <p class='resolved'>解決済</p>
+                <%## 解決済みの場合のみ表示される %>
               </div>
               <div class='question-qual'>
                 <% qual = @quals.find { |status| status.id == question.qual_id } %>
@@ -23,7 +25,6 @@
               </div>
             </li>
           <% end %>
-        <%## /もし質問がある場合は、質問を表示する。 %>
         <% else %>
           <li class='question-list'>
             <div class='question-content'>
